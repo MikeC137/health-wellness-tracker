@@ -1,13 +1,35 @@
 # Compiled files
-*.o
-*.out
 *.exe
+*.obj
+*.o
+*.pdb
+*.ilk
+*.dll
+*.lib
 
-# Build folders
-build/
-cmake-build-debug/
-cmake-build-release/
+# VS Code
+.vscode/          # Keep this if you want to share settings
+!.vscode/launch.json  # But include specific config files
+!.vscode/tasks.json
 
-# Mac / Windows files
+# Visual Studio
+.vs/
+*.sln
+*.vcxproj
+*.filters
+*.user
+ipch/
+*.aps
+*.ncb
+*.suo
+*.tlog
+*.log
+*.sbr
+
+# OS generated files
 .DS_Store
 Thumbs.db
+
+# Binary files
+*.bin
+*.out
