@@ -26,6 +26,9 @@ public:
 
     Date getDate() const;
     string getTime() const;
+    int getMood() const;
+    int getSteps() const;
+    double getSleepHours() const;
 
     bool operator<(const WellnessRecord &other) const;
 
