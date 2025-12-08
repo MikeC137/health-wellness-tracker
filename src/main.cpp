@@ -1,43 +1,49 @@
 #include <iostream>
+#include "WellnessTracker.h"
+
 using namespace std;
 
 int main()
 {
-    bool running = true;
+    WellnessTracker tracker;
 
-    while (running)
+    int choice = -1;
+
+    while (choice != 0)
     {
-        cout << "==============================\n"
-             << "BMCC STUDENT WELLNESS TRACKER\n"
-             << "==============================\n";
-
-        cout << endl
-             << "1. Add a new wellness record\n"
-             << "2. Show all records\n"
-             << "3. Sort records (date/time)\n"
-             << "4. Save records to file\n"
-             << "5. Load records from file\n"
-             << "0. Exit\n";
-
-        int choice;
-        cout << endl
-             << "Enter choice: ";
+        cout << "==============================\n";
+        cout << "BMCC STUDENT WELLNESS TRACKER\n";
+        cout << "==============================\n";
+        cout << "1. Add a new wellness record\n";
+        cout << "2. Show all records\n";
+        cout << "3. Sort records (date/time)\n";
+        cout << "4. Save records to file\n";
+        cout << "5. Load records from file\n";
+        cout << "0. Exit\n";
+        cout << "Enter choice: ";
         cin >> choice;
 
         switch (choice)
         {
         case 1:
+            tracker.addRecord();
             break;
-
+        case 2:
+            tracker.showAll();
+            break;
+        case 3:
+            tracker.sortRecords();
+            break;
+        case 4:
+            tracker.saveToFile();
+            break;
+        case 5:
+            tracker.loadFromFile();
+            break;
         case 0:
             cout << "Exiting...\n";
-            running = false;
             break;
-
-        default:
-            cout << "Invalid input.\n";
         }
     }
-
     return 0;
 }
