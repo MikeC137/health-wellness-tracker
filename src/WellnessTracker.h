@@ -8,20 +8,17 @@ using namespace std;
 
 class WellnessTracker
 {
+public:
+    WellnessTracker();
+    void addRecord();
+    void showAll();
+    void saveToFile();
+    void loadFromFile();
+
 private:
     vector<WellnessRecord> records;
 
     WellnessRecord *tempArrayPtr;
-
-public:
-    WellnessTracker();
-    ~WellnessTracker();
-
-    void addRecord();
-    void showAll();
-    void sortRecords();
-    void saveToFile();
-    void loadFromFile();
 };
 
 #endif

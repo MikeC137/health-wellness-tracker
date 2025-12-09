@@ -16,9 +16,8 @@ int main()
         cout << "==============================\n";
         cout << "1. Add a new wellness record\n";
         cout << "2. Show all records\n";
-        cout << "3. Sort records (date/time)\n";
-        cout << "4. Save records to file\n";
-        cout << "5. Load records from file\n";
+        cout << "3. Save records to file\n";
+        cout << "4. Load records from file\n";
         cout << "0. Exit\n";
         cout << "Enter choice: ";
         cin >> choice;
@@ -32,16 +31,16 @@ int main()
             tracker.showAll();
             break;
         case 3:
-            tracker.sortRecords();
-            break;
-        case 4:
             tracker.saveToFile();
             break;
-        case 5:
+        case 4:
             tracker.loadFromFile();
             break;
         case 0:
             cout << "Exiting...\n";
+            break;
+        default:
+            cout << "Invalid choice.\n";
             break;
         }
     }

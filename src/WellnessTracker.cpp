@@ -49,41 +49,6 @@ void WellnessTracker::showAll()
     }
 }
 
-void WellnessTracker::sortRecords()
-{
-    size_t n = records.size();
-
-    if (n == 0)
-        return;
-
-    tempArrayPtr = new WellnessRecord[n];
-    for (size_t i = 0; i < n; ++i)
-        tempArrayPtr[i] = records[i];
-
-    for (size_t i = 0; i < n - 1; ++i)
-    {
-        size_t minIdx = i;
-        for (size_t j = i + 1; j < n; ++j)
-        {
-            if (tempArrayPtr[j] < tempArrayPtr[minIdx])
-                minIdx = j;
-        }
-        if (minIdx != i)
-        {
-            WellnessRecord tmp = tempArrayPtr[i];
-            tempArrayPtr[i] = tempArrayPtr[minIdx];
-            tempArrayPtr[minIdx] = tmp;
-        }
-    }
-
-    records.clear();
-    for (size_t i = 0; i < n; ++i)
-        records.push_back(tempArrayPtr[i]);
-
-    delete[] tempArrayPtr;
-    tempArrayPtr = nullptr;
-}
-
 void WellnessTracker::saveToFile()
 {
     ofstream file("records.txt");
