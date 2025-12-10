@@ -46,10 +46,29 @@ void WellnessTracker::addRecord()
 
 void WellnessTracker::showAll()
 {
-    for (int i = 0; i < records.size(); i++)
+    cout << "\n";
+
+    vector<WellnessRecord> sortedRecords = records;
+
+    for (size_t i = 0; i < sortedRecords.size(); i++)
     {
-        printRecord(records[i]);
+        for (size_t j = 0; j < sortedRecords.size() - i - 1; j++)
+        {
+            if (sortedRecords[j + 1] < sortedRecords[j])
+            {
+                WellnessRecord temp = sortedRecords[j];
+                sortedRecords[j] = sortedRecords[j + 1];
+                sortedRecords[j + 1] = temp;
+            }
+        }
     }
+
+    for (int i = 0; i < sortedRecords.size(); i++)
+    {
+        printRecord(sortedRecords[i]);
+    }
+
+    cout << "\n";
 }
 
 void WellnessTracker::saveToFile()
