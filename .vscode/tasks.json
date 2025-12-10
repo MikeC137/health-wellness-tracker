@@ -2,28 +2,24 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Build C++",
+            "label": "Build HealthWellnessTracker",
             "type": "shell",
             "command": "cl",
             "args": [
                 "/EHsc",
-                "/Fe:${fileDirname}\\${fileBasenameNoExtension}.exe",
-                "${file}"
+                "/Fe:${workspaceFolder}\\bin\\HealthWellnessTracker.exe",
+                "${workspaceFolder}\\src\\main.cpp",
+                "${workspaceFolder}\\src\\WellnessTracker.cpp",
+                "${workspaceFolder}\\src\\WellnessRecord.cpp"
             ],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            "problemMatcher": ["$msCompile"],
-            "detail": "Compile with MSVC cl.exe"
-        },
-        {
-            "label": "Build and Run C++",
-            "dependsOn": "Build C++",
-            "type": "shell",
-            "command": "${fileDirname}\\${fileBasenameNoExtension}.exe",
-            "group": "test",
-            "problemMatcher": []
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": "$msCompile"
         }
     ]
 }

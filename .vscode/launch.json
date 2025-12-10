@@ -2,29 +2,14 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Build and Debug C++",
-            "type": "cppvsdbg",  
-            "request": "launch",
-            "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
-            "environment": [],
-            "console": "externalTerminal",  
-            "preLaunchTask": "Build C++",  
-            "internalConsoleOptions": "neverOpen"
-        },
-        {
-            "name": "Debug C++ (Integrated Terminal)",
+            "name": "Launch HealthWellnessTracker (MSVC)",
             "type": "cppvsdbg",
             "request": "launch",
-            "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+            "program": "${workspaceFolder}\\bin\\HealthWellnessTracker.exe",
             "args": [],
-            "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
-            "environment": [],
-            "console": "integratedTerminal", 
-            "preLaunchTask": "Build C++"
+            "console": "integratedTerminal",
+            "preLaunchTask": "Build HealthWellnessTracker"
         }
     ]
 }
