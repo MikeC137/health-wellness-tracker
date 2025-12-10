@@ -11,16 +11,18 @@ int main()
 
     while (choice != 0)
     {
+        cout << "\n";
         cout << "==============================\n";
         cout << "BMCC STUDENT WELLNESS TRACKER\n";
         cout << "==============================\n";
-        cout << "1. Add a new wellness record\n";
+        cout << "1. Add a new wellness record \n";
         cout << "2. Show all records\n";
         cout << "3. Save records to file\n";
         cout << "4. Load records from file\n";
         cout << "0. Exit\n";
         cout << "Enter choice: ";
         cin >> choice;
+        cout << "\n";
 
         switch (choice)
         {
@@ -43,6 +45,8 @@ int main()
             cout << "Invalid choice.\n";
             break;
         }
+
+        cout << "\n";
     }
     return 0;
 }
