@@ -16,6 +16,7 @@ WellnessTracker::~WellnessTracker()
 
 void WellnessTracker::addRecord()
 {
+
     Date d;
     string t;
     int m;
@@ -39,6 +40,8 @@ void WellnessTracker::addRecord()
 
     WellnessRecord rec(d, t, m, s, sh);
     records.push_back(rec);
+
+    cout << "\nRecord added.\n\n";
 }
 
 void WellnessTracker::showAll()
@@ -51,6 +54,7 @@ void WellnessTracker::showAll()
 
 void WellnessTracker::saveToFile()
 {
+
     ofstream file("records.txt");
 
     if (file.is_open())
@@ -63,9 +67,13 @@ void WellnessTracker::saveToFile()
             file << records[i].getTime() << ' ';
             file << records[i].getMood() << ' ' << records[i].getSteps() << ' ' << records[i].getSleepHours() << '\n';
         }
+        file.close();
+        cout << "Saved " << records.size() << " records to records.txt\n\n";
+        return;
     }
 
     file.close();
+    cout << "Failed to open records.txt for writing.\n\n";
 }
 
 void WellnessTracker::loadFromFile()
@@ -76,7 +84,11 @@ void WellnessTracker::loadFromFile()
     {
         size_t count = 0;
         if (!(file >> count))
+        {
+            cout << "Failed to read record count.\n\n";
+            file.close();
             return;
+        }
 
         records.clear();
         for (size_t i = 0; i < count; ++i)
@@ -95,7 +107,11 @@ void WellnessTracker::loadFromFile()
             WellnessRecord rec(d, t, m, s, sh);
             records.push_back(rec);
         }
+
+        file.close();
+        cout << "Loaded " << records.size() << " records from records.txt\n\n";
+        return;
     }
 
-    file.close();
+    cout << "Failed to open records.txt for reading.\n\n";
 }

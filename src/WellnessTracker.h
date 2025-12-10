@@ -10,6 +10,7 @@ class WellnessTracker
 {
 public:
     WellnessTracker();
+    ~WellnessTracker();
     void addRecord();
     void showAll();
     void saveToFile();
