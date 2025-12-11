@@ -9,8 +9,6 @@ using namespace std;
 class WellnessTracker
 {
 public:
-    WellnessTracker();
-    ~WellnessTracker();
     void addRecord();
     void showAll();
     void saveToFile();
@@ -18,8 +16,6 @@ public:
 
 private:
     vector<WellnessRecord> records;
-
-    WellnessRecord *tempArrayPtr;
 };
 
 #endif

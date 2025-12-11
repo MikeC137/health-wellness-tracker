@@ -4,16 +4,6 @@
 
 using namespace std;
 
-WellnessTracker::WellnessTracker()
-{
-    tempArrayPtr = nullptr;
-}
-
-WellnessTracker::~WellnessTracker()
-{
-    delete[] tempArrayPtr;
-}
-
 void WellnessTracker::addRecord()
 {
 
@@ -46,6 +36,12 @@ void WellnessTracker::addRecord()
 
 void WellnessTracker::showAll()
 {
+    if (records.empty())
+    {
+        cout << "No records to show.\n\n";
+        return;
+    }
+
     cout << "\n";
 
     vector<WellnessRecord> sortedRecords = records;
@@ -127,7 +123,6 @@ void WellnessTracker::loadFromFile()
             records.push_back(rec);
         }
 
-        file.close();
         cout << "Loaded " << records.size() << " records from records.txt\n\n";
         return;
     }
