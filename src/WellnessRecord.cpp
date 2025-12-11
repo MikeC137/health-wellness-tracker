@@ -58,8 +58,14 @@ bool WellnessRecord::operator<(const WellnessRecord &other) const
 
 void printRecord(const WellnessRecord &rec)
 {
-    cout << rec.date.year << "-" << rec.date.month << "-" << rec.date.day;
-    cout << "  Time: " << rec.time;
-    cout << "  Mood: " << rec.mood;
-    cout << "  Steps: " << rec.steps << endl;
+    cout << "Date: "
+         << rec.getDate().year << "-"
+         << rec.getDate().month << "-"
+         << rec.getDate().day << "\n";
+
+    cout << "  Time: " << rec.getTime() << "\n";
+    cout << "  Mood: " << rec.getMood() << "\n";
+    cout << "  Steps: " << rec.getSteps() << "\n";
+    cout << "  Sleep Hours: " << rec.getSleepHours() << "\n";
+    cout << "-----------------------------\n";
 }
